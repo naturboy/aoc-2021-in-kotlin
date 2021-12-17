@@ -1,3 +1,5 @@
+import java.util.*
+
 fun main() {
 
     fun part1(input: List<SubmarineMovement>): Int {
@@ -48,7 +50,7 @@ data class SubmarineMovement(val direction: SubmarineMovementDirection, val unit
     companion object {
         fun fromString(instruction: String): SubmarineMovement {
             val (direction, units) = instruction.split(" ")
-            return SubmarineMovement(SubmarineMovementDirection.valueOf(direction.toUpperCase()), units.toInt())
+            return SubmarineMovement(SubmarineMovementDirection.valueOf(direction.uppercase(Locale.getDefault())), units.toInt())
         }
     }
 }
